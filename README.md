@@ -1,6 +1,6 @@
 # Kalshi Live Dashboard
 
-A clean dashboard that hooks into the Kalshi API to track and plot contract probabilities in real-time. Just plug in an event ticker (like `KXWCGAME-26JUN22ARGAUT` or `NASDAQ`) and it will draw the historical trajectory line graph and show live spreads.
+A dashboard that uses the Kalshi API to track and plot contract probabilities in real-time. Plug in an event ticker (like `KXWCGAME-26JUN22ARGAUT` or `NASDAQ`) and it will draw the historical trajectory line graph and show live spreads.
 
 ## How to get it running
 
@@ -16,4 +16,4 @@ Fire up the Flask server:
 python app.py
 ```
 
-Then just open http://127.0.0.1:5000 in your browser.
+Then open http://127.0.0.1:5000 in your browser.
