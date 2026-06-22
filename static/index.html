@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Argentina vs Austria Match Tracker</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo-area">
+                <span class="pulse-indicator"></span>
+                <div>
+                    <h1>Argentina vs Austria</h1>
+                    <p class="subtitle">FIFA World Cup Group Stage Tracker</p>
+                </div>
+            </div>
+            <div class="controls-area">
+                <div class="search-box">
+                    <input type="text" id="ticker-input" placeholder="Enter Event Ticker (e.g. KXWCGAME-26JUN22ARGAUT)" value="KXWCGAME-26JUN22ARGAUT">
+                    <button class="search-btn" id="load-btn" onclick="loadCustomTicker()">Load</button>
+                </div>
+                <div class="status-badge" id="status-badge">Connecting</div>
+            </div>
+        </header>
+
+        <main class="app-main">
+            <div id="loading" class="loading-state">
+                <div class="spinner"></div>
+                <p>Loading real-time prediction probabilities...</p>
+            </div>
+
+            <div class="markets-grid" id="markets-grid"></div>
+        </main>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+</html>
