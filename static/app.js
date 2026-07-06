@@ -1,12 +1,28 @@
 let previousPrices = {};
 let priceHistory = [];
-let activeTicker = "KXWCGAME-26JUN22ARGAUT";
+let activeTicker = "";
 let loadedTicker = "";
 
 async function fetchMarkets() {
     const badge = document.getElementById("status-badge");
     const loading = document.getElementById("loading");
     const grid = document.getElementById("markets-grid");
+    
+    if (!activeTicker) {
+        badge.innerText = "Ready";
+        badge.className = "status-badge";
+        if (loading) loading.style.display = "none";
+        if (grid && !grid.querySelector(".welcome-message")) {
+            grid.innerHTML = `
+                <div class="welcome-message" style="grid-column: 1 / -1; text-align: center; padding: 4rem 2rem; color: #9ca3af;">
+                    <div style="font-size: 3rem; margin-bottom: 1.5rem;">📊</div>
+                    <h2 style="font-weight: 600; color: #fff; font-size: 1.5rem;">No Market Loaded</h2>
+                    <p style="margin-top: 0.5rem; opacity: 0.8; font-size: 1rem;">Enter a Kalshi Event Ticker above (e.g., <strong>NASDAQ</strong>, <strong>FED</strong>, or <strong>KXECONSTATCPI</strong>) to start tracking live prediction markets.</p>
+                </div>
+            `;
+        }
+        return;
+    }
     
     badge.innerText = "Syncing";
     badge.className = "status-badge syncing";
